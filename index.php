@@ -13,11 +13,13 @@
         <div class="form-group">
             <label for="naam">Naam:</label>
             <input type="text" id="naam" name="naam" required>
+            <small class="info">Vul hier je volledige naam in.</small>
         </div>
         
         <div class="form-group">
             <label for="email">E-mailadres:</label>
             <input type="email" id="email" name="email" required>
+            <small class="info">Gebruik een geldig e-mailadres, bijvoorbeeld: naam@voorbeeld.nl</small>
         </div>
         
         <div class="form-group">

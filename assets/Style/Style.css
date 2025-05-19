@@ -109,6 +109,15 @@ a:hover {
     margin-bottom: 24px;
 }
 
+.info {
+    display: block;
+    color: #6b7280;
+    font-size: 0.93em;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    letter-spacing: 0.01em;
+}
+
 @media (max-width: 500px) {
     form, .thankyou-box {
         min-width: 0;
