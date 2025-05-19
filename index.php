@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactformulier</title>
-    link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
     <h1>Contactformulier</h1>
@@ -28,4 +28,5 @@
         <button type="submit">Verzenden</button>
     </form>
 </body>
+<script src="script/script.js"></script>
 </html>
