@@ -1,6 +1,7 @@
 <?php
 function validate_name($name) {
-    return !empty(trim($name));
+    // Only letters (including accents), spaces, and hyphens, max 100 chars
+    return !empty(trim($name)) && mb_strlen($name) <= 100 && preg_match('/^[A-Za-zÀ-ÿ\s\-]+$/u', $name);
 }
 
 function validate_email($email) {

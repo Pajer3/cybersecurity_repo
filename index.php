@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactformulier</title>
     <link rel="stylesheet" href="assets/style/style.css">
+    <script src="assets/js/script.js"></script>
 </head>
 <body>
     <h1>Contactformulier</h1>
     
-    <form action="process.php" method="post">
+    <form action="pages/process.php" method="post">
         <div class="form-group">
             <label for="naam">Naam:</label>
             <input type="text" id="naam" name="naam" required>
@@ -30,5 +31,4 @@
         <button type="submit">Verzenden</button>
     </form>
 </body>
-<script src="assets/script/script.js"></script>
 </html>

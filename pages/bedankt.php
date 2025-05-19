@@ -1,7 +1,7 @@
 <?php
-// filepath: bedankt.php
+// filepath: pages/bedankt.php
 session_start();
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/../includes/functions.php';
 
 $name = $_SESSION['name'] ?? '';
 $email = $_SESSION['email'] ?? '';
@@ -13,7 +13,7 @@ session_unset();
 <head>
     <meta charset="UTF-8">
     <title>Bedankt!</title>
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
 </head>
 <body>
     <h1>Bedankt voor je bericht!</h1>
@@ -25,6 +25,6 @@ session_unset();
             <?= $message ?>
         </div>
     </div>
-    <a href="index.php">Nog een bericht sturen</a>
+    <a href="../index.php">Nog een bericht sturen</a>
 </body>
 </html>
