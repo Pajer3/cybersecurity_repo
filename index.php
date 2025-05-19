@@ -28,5 +28,5 @@
         <button type="submit">Verzenden</button>
     </form>
 </body>
-<script src="script/script.js"></script>
+<script src="assets/script/script.js"></script>
 </html>
