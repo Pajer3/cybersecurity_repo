@@ -1,6 +1,7 @@
 <?php
 // filepath: pages/process.php
 require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../includes/classes/ContactValidator.php';
 require_once __DIR__ . '/../includes/db.php';
 
 $errors = [];
@@ -9,14 +10,14 @@ $email = $_POST['email'] ?? '';
 $message = $_POST['bericht'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!validate_name($name)) {
-        $errors[] = 'Naam mag niet leeg zijn.';
+    if (!ContactValidator::validateName($name)) {
+        $errors[] = 'Naam mag niet leeg zijn en mag alleen letters, spaties en streepjes bevatten (max 100 tekens).';
     }
-    if (!validate_email($email)) {
-        $errors[] = 'E-mailadres is ongeldig.';
+    if (!ContactValidator::validateEmail($email)) {
+        $errors[] = 'E-mailadres is ongeldig of te lang.';
     }
-    if (!validate_message($message)) {
-        $errors[] = 'Bericht mag niet leeg zijn.';
+    if (!ContactValidator::validateMessage($message)) {
+        $errors[] = 'Bericht mag niet leeg zijn en maximaal 1000 tekens bevatten.';
     }
 
     if (empty($errors)) {
@@ -31,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($errors)) {
             // Output validatie en redirect naar bedankpagina
             session_start();
-            $_SESSION['name'] = sanitize_output($name);
-            $_SESSION['email'] = sanitize_output($email);
-            $_SESSION['message'] = sanitize_output($message);
+            $_SESSION['name'] = ContactValidator::sanitizeOutput($name);
+            $_SESSION['email'] = ContactValidator::sanitizeOutput($email);
+            $_SESSION['message'] = ContactValidator::sanitizeOutput($message);
             header('Location: bedankt.php');
             exit;
         }
